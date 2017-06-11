@@ -7,9 +7,10 @@ if [ "$(uname)" == "Darwin" ]; then
         -projectPath $project_path \
         -collection=$build_collection
 else
-    /opt/Unity/Editor/Unity -logfile -quit -batchmode -nographics -force-opengl \
-        -executeMethod UBS.UBSProcess.BuildFromCommandLine \
-        -android-ndk=$android_ndk_home -android-sdk=$ANDROID_HOME \
-        -projectPath $project_path \
-        -collection=$build_collection
+    xvfb-run -a -n 55 -s "-screen 0 800x600x24 -ac +extension GLX +render -noreset" \
+        /opt/Unity/Editor/Unity -logfile -quit -batchmode -nographics -force-opengl \
+            -executeMethod UBS.UBSProcess.BuildFromCommandLine \
+            -android-ndk=$android_ndk_home -android-sdk=$ANDROID_HOME \
+            -projectPath $project_path \
+            -collection=$build_collection
 fi
