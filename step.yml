@@ -1,0 +1,38 @@
+title: "Build Unity project with UBS"
+summary: The step triggers a build of a Unity project with UBS
+website: https://github.com/rubentorresbonet/unity-build-ubs
+source_code_url: https://github.com/rubentorresbonet/unity-build-ubs
+support_url: https://github.com/rubentorresbonet/unity-build-ubs/issues
+host_os_tags:
+  - osx-10.10
+  - ubuntu
+project_type_tags:
+  - ios
+  - android
+type_tags:
+  - script
+is_requires_admin_user: true
+is_always_run: false
+is_skippable: false
+run_if: ""
+inputs:
+  - project_path: $BITRISE_SOURCE_DIR
+    opts:
+      title: "Unity project path"
+      is_expand: true
+      is_required: true
+  - build_collection:
+    opts:
+      title: "UBS build collection, like Asset/BuildCollection/iOS.asset"
+      is_expand: true
+      is_required: true
+  - android_sdk_home: $ANDROID_HOME
+    opts:
+      title: "Android SDK path"
+      is_expand: true
+      is_required: true
+  - android_ndk_home: $ANDROID_NDK_HOME
+    opts:
+      title: "Android NDK r10e path"
+      is_expand: true
+      is_required: true
