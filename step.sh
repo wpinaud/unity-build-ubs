@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if $clean ; then
+    rm -rf $project_path/Library $project_path/Temp $project_path/obj
+    echo "Cleaned build data"
+fi
+
 if [ "$(uname)" == "Darwin" ]; then
     /Applications/Unity/Unity.app/Contents/MacOS/Unity -logfile -quit -batchmode -nographics \
         -executeMethod UBS.UBSProcess.BuildFromCommandLine \
