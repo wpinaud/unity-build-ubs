@@ -36,3 +36,8 @@ inputs:
       title: "Android NDK r10e path"
       is_expand: true
       is_required: true
+  - clean: "true"
+    opts:
+      title: "Clean build data before compiling"
+      is_expand: true
+      is_required: true
