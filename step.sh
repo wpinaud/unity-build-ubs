@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $clean = "true" ]; then
+if [ "$clean" = "true" ]; then
     rm -rf $project_path/Library $project_path/Temp $project_path/obj
     echo "Cleaned build data"
 fi
