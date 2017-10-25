@@ -1,8 +1,8 @@
-title: "Build Unity project with UBS"
-summary: The step triggers a build of a Unity project with UBS
-website: https://github.com/rubentorresbonet/unity-build-ubs
-source_code_url: https://github.com/rubentorresbonet/unity-build-ubs
-support_url: https://github.com/rubentorresbonet/unity-build-ubs/issues
+title: "Build Unity project"
+summary: The step triggers a build of a Unity project
+website: https://github.com/wpinaud/unity-build-ubs
+source_code_url: https://github.com/wpinaud/unity-build-ubs
+support_url: https://github.com/wpinaud/unity-build-ubs/issues
 host_os_tags:
   - osx-10.10
   - ubuntu
@@ -21,18 +21,23 @@ inputs:
       title: "Unity project path"
       is_expand: true
       is_required: true
-  - build_collection:
+  - configuration_asset_path:
     opts:
-      title: "UBS build collection, like Asset/BuildCollection/iOS.asset"
+      title: "The configuration asset, like Asset/AllConfigurationsAssets/iOS.asset"
       is_expand: true
       is_required: true
-  - android_sdk_home: $ANDROID_HOME
+  - build_target: android
     opts:
-      title: "Android SDK path"
+      title: "android or ios"
       is_expand: true
       is_required: true
-  - android_ndk_home: $ANDROID_NDK_HOME
+  - is_ios:
     opts:
-      title: "Android NDK r10e path"
+      title: "is this an ios build? true or false"
+      is_expand: true
+      is_required: true
+  - vr_enabled:
+    opts:
+      title: "is this a vr build (gear vr)? true or false"
       is_expand: true
       is_required: true
