@@ -16,7 +16,7 @@ if [ "$(uname)" == "Darwin" ]; then
         "${args[@]}"
 
 else
-    xvfb-run -a -n 55 -s "-screen 0 800x600x24 -ac +extension GLX +render -noreset" \
+    sudo xvfb-run -a -n 55 -s "-screen 0 800x600x24 -ac +extension GLX +render -noreset" \
         /opt/Unity/Editor/Unity -logfile -quit -batchmode -nographics -force-opengl \
             -buildTarget $build_target \
             -executeMethod LiveLike.UnityCloudBuildPrepare.BuildFromCommandLine \
